@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MuseumCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="museum_schema.xsd">
+    <Artifact>
+        <Category>Painting</Category>
+        <ArtifactID>PA001</ArtifactID>
+        <Name>Starry Night</Name>
+        <Description>A famous painting by Vincent van Gogh.</Description>
+        <DateAcquired>2023-05-12</DateAcquired>
+        <Condition>Excellent</Condition>
+        <ArtistName>Vincent van Gogh</ArtistName>
+        <Year>1889</Year>
+    </Artifact>
+    <Artifact>
+        <Category>Sculpture</Category>
+        <ArtifactID>SC001</ArtifactID>
+        <Name>David</Name>
+        <Description>A masterpiece sculpture by Michelangelo.</Description>
+        <DateAcquired>2022-11-25</DateAcquired>
+        <Condition>Good</Condition>
+        <Material>Marble</Material>
+        <SculptorName>Michelangelo</SculptorName>
+    </Artifact>
+    <Artifact>
+        <Category>Manuscript</Category>
+        <ArtifactID>MS001</ArtifactID>
+        <Name>De Rerum Natura</Name>
+        <Description>An epic philosophical poem by Lucretius.</Description>
+        <DateAcquired>2024-01-09</DateAcquired>
+        <Condition>Fair</Condition>
+        <Language>Latin</Language>
+        <Author>Lucretius</Author>
+    </Artifact>
+    <Artifact>
+        <Category>Historical Object</Category>
+        <ArtifactID>HO001</ArtifactID>
+        <Name>Ancient Vase</Name>
+        <Description>An ancient vase from Greece.</Description>
+        <DateAcquired>2021-08-19</DateAcquired>
+        <Condition>Poor</Condition>
+        <OriginCountry>Greece</OriginCountry>
+        <EstimatedAge>2500</EstimatedAge>
+    </Artifact>
+</MuseumCollection>

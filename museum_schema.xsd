@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Define simple types for Condition and DateAcquired -->
+    <xs:simpleType name="ConditionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Excellent"/>
+            <xs:enumeration value="Good"/>
+            <xs:enumeration value="Fair"/>
+            <xs:enumeration value="Poor"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DateType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Define the Artifact element -->
+    <xs:element name="MuseumCollection">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Artifact" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Category" type="xs:string"/>
+                            <xs:element name="ArtifactID" type="xs:string"/>
+                            <xs:element name="Name" type="xs:string"/>
+                            <xs:element name="Description" type="xs:string"/>
+                            <xs:element name="DateAcquired" type="DateType"/>
+                            <xs:element name="Condition" type="ConditionType"/>
+                            <!-- Conditional elements based on category -->
+                            <xs:choice>
+                                <xs:element name="ArtistName" type="xs:string" minOccurs="0"/>
+                                <xs:element name="Material" type="xs:string" minOccurs="0"/>
+                                <xs:element name="Language" type="xs:string" minOccurs="0"/>
+                                <xs:element name="OriginCountry" type="xs:string" minOccurs="0"/>
+                            </xs:choice>
+                            <xs:choice>
+                                <xs:element name="Year" type="xs:positiveInteger" minOccurs="0"/>
+                                <xs:element name="SculptorName" type="xs:string" minOccurs="0"/>
+                                <xs:element name="Author" type="xs:string" minOccurs="0"/>
+                                <xs:element name="EstimatedAge" type="xs:positiveInteger" minOccurs="0"/>
+                            </xs:choice>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- Ensure uniqueness of ArtifactID using a key constraint -->
+        <xs:key name="artifactIDKey">
+            <xs:selector xpath="Artifact"/>
+            <xs:field xpath="ArtifactID"/>
+        </xs:key>
+    </xs:element>
+</xs:schema>
